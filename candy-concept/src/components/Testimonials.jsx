@@ -7,7 +7,7 @@ export default function Testimonials() {
     {
       name: "Mariana Silva",
       role: "Noiva",
-      text: "A Rebola Queixo fez os doces do meu casamento e foi a melhor escolha! Todos os convidados elogiaram a apresentação e o sabor.",
+      text: "A Candy Concept fez os doces do meu casamento e foi a melhor escolha! Todos os convidados elogiaram a apresentação e o sabor.",
     },
     {
       name: "João Pedro",

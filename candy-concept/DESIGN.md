@@ -1,5 +1,5 @@
 ---
-name: Rebola Queixo Doceria
+name: Candy Concept
 description: Landing page para doceria de luxo, unindo elegância com toques divertidos (Vibrant Luxury).
 aesthetic: Vibrant Luxury / Premium Consumer
 variance: 7
@@ -8,7 +8,7 @@ density: 4
 theme_default: light
 ---
 
-# Design System: Rebola Queixo
+# Design System: Candy Concept
 
 ## 1. Tokens
 

@@ -9,7 +9,7 @@ function App() {
     <main className="min-h-screen bg-off-white text-off-black selection:bg-rosa-cereja selection:text-white">
       {/* Navigation */}
       <nav className="flex items-center justify-between p-6 md:px-12 max-w-[1400px] mx-auto">
-        <div className="font-display font-bold text-2xl tracking-tight">Rebola Queixo</div>
+        <div className="font-display font-bold text-2xl tracking-tight">Candy Concept</div>
         <div className="hidden md:flex gap-8 text-sm font-medium">
           <a href="#produtos" className="hover:text-rosa-cereja transition-colors">Produtos</a>
           <a href="#sobre" className="hover:text-rosa-cereja transition-colors">Sobre</a>
