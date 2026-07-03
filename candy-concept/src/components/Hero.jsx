@@ -24,10 +24,10 @@ export default function Hero() {
           </p>
           
           <div className="flex items-center gap-4">
-            <button className="bg-rosa-cereja text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 hover:bg-rosa-cereja-dark transition-colors group">
+            <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Seja%20bem-vindo%20a%20Candy%20Concept!%20Em%20que%20podemos%20ajudar%3F" target="_blank" rel="noopener noreferrer" className="bg-rosa-cereja text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 hover:bg-rosa-cereja-dark transition-colors group">
               Fazer Encomenda
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <button className="px-8 py-4 rounded-full font-medium border border-off-black/10 hover:bg-off-black/5 transition-colors">
               Ver Menu
             </button>
