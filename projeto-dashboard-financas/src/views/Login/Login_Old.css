@@ -1,0 +1,305 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--bg-color);
+  gap: 2.5rem;
+}
+
+/* Mockup de celulares na parte superior */
+.mockup-header {
+  width: 100%;
+  max-width: 580px;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.phone-rack {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.phone-screen {
+  flex: 1;
+  max-width: 90px;
+  height: 170px;
+  border: 2px solid var(--border-color);
+  background-color: var(--surface-color);
+  border-radius: 12px; /* Cantos arredondados de celular */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-normal), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.phone-screen:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--border-focus);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 5px;
+  width: 25px;
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phone-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.phone-screen:hover .logo-badge {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-muted);
+}
+
+/* Cores específicas de fundo dos celulares na animação */
+.phone-screen.bg-tiktok:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+.phone-screen.bg-facebook:hover {
+  box-shadow: 0 0 15px rgba(24, 119, 242, 0.2);
+}
+.phone-screen.bg-instagram:hover {
+  box-shadow: 0 0 15px rgba(225, 48, 108, 0.2);
+}
+.phone-screen.bg-reddit:hover {
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.2);
+}
+.phone-screen.bg-google:hover {
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.2);
+}
+
+/* Card de Login principal */
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-card-header h2 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.login-card-header p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Grid de Login Social */
+.social-login-grid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.social-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-focus);
+  transform: translateY(-2px);
+}
+
+.social-btn:active {
+  transform: translateY(0);
+}
+
+/* Divisor */
+.divider-container {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  gap: 12px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.divider-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Formulário de Login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.error-message {
+  background-color: rgba(244, 63, 94, 0.1);
+  border: 1px solid var(--color-expense);
+  color: var(--color-expense);
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* Botão Submit (Acento Verde Tech em vez de Roxo) */
+.submit-btn {
+  margin-top: 0.5rem;
+  padding: 0.85rem;
+  background-color: var(--color-income);
+  color: var(--bg-color); /* Contraste máximo em fundo verde */
+  font-weight: 700;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  font-size: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: var(--color-income-hover);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background-color: var(--text-muted);
+  color: var(--surface-color);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer do Login */
+.login-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-income);
+}
+
+/* Responsividade Mobile */
+@media (max-width: 600px) {
+  .phone-screen {
+    max-width: 65px;
+    height: 120px;
+    border-radius: 8px;
+  }
+  .phone-notch {
+    width: 15px;
+    height: 4px;
+    top: 3px;
+  }
+  .logo-badge {
+    width: 32px;
+    height: 32px;
+  }
+  .logo-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+  .login-card {
+    padding: 2rem 1.25rem;
+  }
+}

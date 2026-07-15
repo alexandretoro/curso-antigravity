@@ -1,0 +1,281 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--bg-color);
+}
+
+/* Rack de celulares (social login) — agora dentro do .login-card */
+.phone-rack {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+/* card width 450px – padding 2×32px = 386px disponíveis
+   5 celulares + 4 gaps de 10px = 338px ÷ 5 ≈ 68px cada
+   Proporção original 90×170 (1:1.89) → 68×130 mantida */
+.phone-screen {
+  flex: 1;
+  max-width: 72px;
+  height: 130px;
+  border: 2px solid var(--border-color);
+  background-color: var(--surface-color);
+  border-radius: 12px; /* Cantos arredondados de celular */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-normal), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.phone-screen:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--border-focus);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 4px;
+  width: 18px;
+  height: 5px;
+  background-color: var(--border-color);
+  border-radius: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phone-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+/* Cores específicas de fundo dos celulares na animação */
+.phone-screen:hover .logo-badge {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-muted);
+}
+
+/* Glow colorido por rede social no hover */
+.phone-screen.bg-tiktok:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+.phone-screen.bg-facebook:hover {
+  box-shadow: 0 0 15px rgba(24, 119, 242, 0.2);
+}
+.phone-screen.bg-instagram:hover {
+  box-shadow: 0 0 15px rgba(225, 48, 108, 0.2);
+}
+.phone-screen.bg-reddit:hover {
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.2);
+}
+.phone-screen.bg-google:hover {
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.2);
+}
+
+/* Card de Login principal */
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-card-header h2 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.login-card-header p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Divisor */
+.divider-container {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  gap: 12px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.divider-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Formulário de Login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.error-message {
+  background-color: rgba(244, 63, 94, 0.1);
+  border: 1px solid var(--color-expense);
+  color: var(--color-expense);
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* Botão Submit (Acento Verde Tech)*/
+.submit-btn {
+  margin-top: 0.5rem;
+  padding: 0.85rem;
+  background-color: var(--color-income);
+  color: var(--bg-color); /* Contraste máximo em fundo verde */
+  font-weight: 700;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  font-size: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: var(--color-income-hover);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background-color: var(--text-muted);
+  color: var(--surface-color);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer do Login */
+.login-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-income);
+}
+
+/* Responsividade Mobile
+   viewport ~375px – card padding 2×20px = 335px disponíveis
+   5 celulares + 4 gaps de 8px = 303px ÷ 5 ≈ 60px cada → 60×115 (1:1.91) */
+@media (max-width: 600px) {
+  .phone-rack {
+    gap: 8px;
+  }
+
+  .phone-screen {
+    max-width: 62px;
+    height: 115px;
+    border-radius: 8px;
+  }
+
+  .phone-notch {
+    width: 14px;
+    height: 4px;
+    top: 3px;
+  }
+
+  .logo-badge {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo-badge svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .login-card {
+    padding: 2rem 1.25rem;
+  }
+}
