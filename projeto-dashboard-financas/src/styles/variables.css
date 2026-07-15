@@ -1,5 +1,7 @@
 :root {
   /* Cores Temáticas Dark Tech */
+  --calendar-icon-invert: 1;
+  
   --bg-color: #0a0a0c;
   --surface-color: #121215;
   --surface-hover: #1a1a1f;
@@ -20,6 +22,7 @@
   --color-investment-hover: #2563eb;
   --color-warning: #f97316; /* Laranja */
   --color-warning-hover: #ea580c;
+ 
   
   /* Sistema de Design */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -36,6 +39,8 @@
 
 /* Modo Claro Minimalista (caso alternado pelo usuário) */
 [data-theme="light"] {
+  --calendar-icon-invert: 0;
+  
   --bg-color: #f9f9fb;
   --surface-color: #ffffff;
   --surface-hover: #f3f4f6;
@@ -60,4 +65,5 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+ 
 }

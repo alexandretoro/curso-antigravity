@@ -747,6 +747,12 @@
   padding: 1.5rem;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(var(--calendar-icon-invert, 0));
+  cursor: pointer;
+  opacity: 0.75;
+}
+
 .modal-content {
   width: 100%;
   max-width: 520px;
