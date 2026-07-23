@@ -26,8 +26,8 @@ export function StatusBar({ currentStep = 1 }) {
 
         {/* Step Nodes */}
         {STEPS.map((step) => {
-          const isActive = step.id === currentStep;
-          const isCompleted = step.id < currentStep;
+          const isCompleted = step.id < currentStep || currentStep >= 5;
+          const isActive = step.id === currentStep && !isCompleted;
 
           let stepClass = 'status-bar__node';
           if (isActive) stepClass += ' status-bar__node--active';
