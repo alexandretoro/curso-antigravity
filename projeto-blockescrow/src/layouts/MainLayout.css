@@ -1,0 +1,28 @@
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+}
+
+.main-layout__content {
+  flex: 1;
+  margin-top: 64px;
+  padding: var(--spacing-margin-mobile);
+  padding-bottom: 96px; /* Offset for bottom navbar on mobile */
+  background-color: var(--color-background);
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .main-layout__content {
+    padding: var(--spacing-margin-desktop);
+    padding-bottom: var(--spacing-margin-desktop);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-layout__content {
+    margin-left: 256px; /* Offset for sidebar width */
+  }
+}

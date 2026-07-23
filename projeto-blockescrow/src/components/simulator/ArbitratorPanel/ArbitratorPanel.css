@@ -1,0 +1,144 @@
+.arbitrator-panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.arbitrator-panel--inactive {
+  opacity: 0.4;
+  filter: grayscale(80%);
+}
+
+.arbitrator-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.arbitrator-panel__title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arbitrator-panel__icon {
+  color: var(--color-error);
+}
+
+.arbitrator-panel__title {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.arbitrator-panel__badge {
+  font-size: 12px;
+  color: var(--color-outline);
+  border: 1px solid var(--color-outline);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.arbitrator-panel__badge--active {
+  color: var(--color-error);
+  border-color: var(--color-error);
+  background-color: rgba(255, 180, 171, 0.1);
+}
+
+.arbitrator-panel__badge--resolved {
+  color: var(--color-secondary-fixed);
+  border-color: var(--color-secondary-fixed);
+  background-color: rgba(86, 255, 168, 0.1);
+}
+
+.arbitrator-panel__content {
+  padding: 16px 0;
+}
+
+.arbitrator-panel__waiting-text {
+  text-align: center;
+  color: var(--color-on-surface-variant);
+  font-size: 14px;
+}
+
+.arbitrator-panel__resolved-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.arbitrator-panel__evidence-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .arbitrator-panel__evidence-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.arbitrator-panel__evidence-card {
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background-color: var(--color-surface-low);
+}
+
+.arbitrator-panel__card-label {
+  font-size: 11px;
+  color: var(--color-outline);
+  margin-bottom: 8px;
+}
+
+.arbitrator-panel__file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arbitrator-panel__file-icon {
+  color: var(--color-primary-container);
+  font-size: 24px;
+}
+
+.arbitrator-panel__file-name {
+  font-size: 14px;
+  color: var(--color-on-surface);
+}
+
+.arbitrator-panel__file-meta {
+  font-size: 10px;
+  color: var(--color-outline);
+}
+
+.arbitrator-panel__dispute-text {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+}
+
+.arbitrator-panel__vote-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.arbitrator-panel__winner-btn {
+  background-color: var(--color-secondary-container) !important;
+  color: var(--color-on-secondary-container) !important;
+  border: 2px solid var(--color-primary-container) !important;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+}
+
+.arbitrator-panel__btn-client {
+  background-color: var(--color-error) !important;
+  color: var(--color-on-error) !important;
+  border-color: transparent !important;
+}

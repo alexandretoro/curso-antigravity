@@ -1,0 +1,236 @@
+.reset-sim-page {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.reset-sim-page__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-gutter);
+}
+
+@media (min-width: 1280px) {
+  .reset-sim-page__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.reset-sim-page__main-col,
+.reset-sim-page__side-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gutter);
+}
+
+.reset-sim-page__header {
+  margin-bottom: 8px;
+}
+
+.reset-sim-page__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.reset-sim-page__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.reset-sim-page__status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background-color: rgba(254, 201, 49, 0.1);
+  border: 1px solid rgba(254, 201, 49, 0.3);
+  border-radius: var(--radius-sm);
+  color: #fec931;
+  font-family: var(--font-code);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.reset-sim-page__pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: #fec931;
+  animation: pulse 2s infinite;
+}
+
+.reset-sim-page__subtitle {
+  color: var(--color-on-surface-variant);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Cards */
+.reset-sim-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.reset-sim-card--deposit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 320px;
+  justify-content: center;
+  background-color: #1a1a1a;
+  border-color: #2a2a2a;
+}
+
+.reset-sim-card__icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-container);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.reset-sim-card__heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.reset-sim-card__desc {
+  max-width: 480px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.reset-sim-card__amount-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  background-color: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+
+.reset-sim-card__deposit-btn {
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+/* Timeline */
+.reset-sim-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.reset-sim-timeline__line {
+  position: absolute;
+  left: 15px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background-color: #2a2a2a;
+}
+
+.reset-sim-timeline__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.reset-sim-timeline__step--pending {
+  opacity: 0.5;
+}
+
+.reset-sim-timeline__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reset-sim-timeline__icon--check {
+  background-color: var(--color-secondary-container);
+  border: 1px solid var(--color-secondary-container);
+}
+
+.reset-sim-timeline__icon--active {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-primary-container);
+  position: relative;
+}
+
+.reset-sim-timeline__active-ping {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-container);
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.reset-sim-timeline__active-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-container);
+  position: relative;
+}
+
+.reset-sim-timeline__icon--pending {
+  background-color: var(--color-background);
+  border: 1px solid #2a2a2a;
+}
+
+.reset-sim-timeline__pending-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: #2a2a2a;
+}
+
+/* Contract Details Side Card */
+.reset-sim-card--details {
+  background-color: #1a1a1a;
+  border-color: #2a2a2a;
+}
+
+.reset-sim-card__dl {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reset-sim-card__dl-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reset-sim-card__dl-row--border {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #2a2a2a;
+}

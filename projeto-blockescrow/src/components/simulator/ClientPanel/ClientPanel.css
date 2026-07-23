@@ -1,0 +1,89 @@
+.client-panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.client-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.client-panel__title {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.client-panel__subtitle {
+  color: var(--color-on-surface-variant);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.client-panel__icon {
+  color: var(--color-outline-variant);
+  font-size: 32px;
+}
+
+.client-panel__balance-box {
+  background-color: var(--color-surface-high);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(59, 73, 76, 0.5);
+}
+
+.client-panel__balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.client-panel__balance-label {
+  color: var(--color-on-surface-variant);
+}
+
+.client-panel__vaulted-badge {
+  color: var(--color-primary-container);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.client-panel__lock-icon {
+  font-size: 14px;
+}
+
+.client-panel__balance-val {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary-container);
+}
+
+.client-panel__actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.client-panel__grid-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.client-panel__grid-actions--disabled {
+  opacity: 0.5;
+}

@@ -1,0 +1,41 @@
+.simulator-page {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.simulator-page__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-gutter);
+}
+
+@media (min-width: 1280px) {
+  .simulator-page__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.simulator-page__left-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gutter);
+}
+
+.simulator-page__roles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-gutter);
+}
+
+@media (min-width: 768px) {
+  .simulator-page__roles-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.simulator-page__right-col {
+  display: flex;
+  flex-direction: column;
+}
