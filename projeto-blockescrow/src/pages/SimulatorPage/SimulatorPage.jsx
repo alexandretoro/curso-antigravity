@@ -17,6 +17,7 @@ const INITIAL_LOGS = [
 export function SimulatorPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [clientBalance, setClientBalance] = useState(2500);
+  const [disputeWinner, setDisputeWinner] = useState(null);
   const [logs, setLogs] = useState(INITIAL_LOGS);
 
   const getCurrentTime = () => {
@@ -48,6 +49,7 @@ export function SimulatorPage() {
   // Step 3 -> 5: Maria approves delivery
   const handleApprove = () => {
     setCurrentStep(5);
+    setDisputeWinner('João');
     addLog('SUCCESS', 'Maria APROVOU a entrega! Contrato finalizado.');
     addLog('MINED', 'Bloco #1205 - R$ 500,00 transferidos com sucesso para a carteira de João.');
   };
@@ -62,8 +64,15 @@ export function SimulatorPage() {
   // Step 4 -> 5: Arbitrator votes
   const handleVote = (winner) => {
     setCurrentStep(5);
-    addLog('RESOLUTION', `Arbitrador votou a favor de ${winner.toUpperCase()}.`);
-    addLog('SUCCESS', `Fundos liberados para ${winner}. Simulação concluída.`);
+    setDisputeWinner(winner);
+    if (winner === 'Maria') {
+      setClientBalance((prev) => prev + 500); // Refund R$ 500 back to Maria
+      addLog('RESOLUTION', 'Arbitrador votou a favor de MARIA.');
+      addLog('SUCCESS', 'Fundos de R$ 500,00 reembolsados para a carteira de Maria. Simulação concluída.');
+    } else {
+      addLog('RESOLUTION', 'Arbitrador votou a favor de JOÃO.');
+      addLog('SUCCESS', 'Fundos de R$ 500,00 liberados para João. Simulação concluída.');
+    }
   };
 
   // Hacker Button immutability check
@@ -75,6 +84,7 @@ export function SimulatorPage() {
   const handleResetSimulation = () => {
     setCurrentStep(1);
     setClientBalance(2500);
+    setDisputeWinner(null);
     setLogs([
       ...INITIAL_LOGS,
       { time: getCurrentTime(), tag: 'SYS', message: 'Simulação reiniciada para o estado inicial.' },
@@ -94,6 +104,8 @@ export function SimulatorPage() {
             <ClientPanel
               balance={clientBalance}
               vaultedAmount={currentStep >= 2 && currentStep < 5 ? '500 BRL' : null}
+              paymentSentBadge={currentStep === 5 && disputeWinner === 'João'}
+              refundBadge={currentStep === 5 && disputeWinner === 'Maria'}
               currentStep={currentStep}
               onDeposit={handleDeposit}
               onApprove={handleApprove}
@@ -102,12 +114,14 @@ export function SimulatorPage() {
 
             <FreelancerPanel
               currentStep={currentStep}
+              disputeWinner={disputeWinner}
               onSendWork={handleSendWork}
             />
           </div>
 
           <ArbitratorPanel
             currentStep={currentStep}
+            resolvedWinner={disputeWinner}
             onVote={handleVote}
           />
         </div>

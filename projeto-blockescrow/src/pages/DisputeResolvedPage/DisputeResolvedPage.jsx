@@ -66,6 +66,7 @@ export function DisputeResolvedPage() {
 
             <FreelancerPanel
               currentStep={currentStep}
+              disputeWinner="João"
               onSendWork={() => {}}
             />
           </div>

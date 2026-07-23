@@ -4,6 +4,7 @@ import './FreelancerPanel.css';
 
 export function FreelancerPanel({
   currentStep = 1,
+  disputeWinner = null,
   onSendWork,
 }) {
   const canSendWork = currentStep === 2;
@@ -21,8 +22,13 @@ export function FreelancerPanel({
     statusText = 'Em Disputa';
     statusBadgeClass = 'freelancer-panel__status--disputed';
   } else if (currentStep >= 5) {
-    statusText = 'Pagamento Recebido';
-    statusBadgeClass = 'freelancer-panel__status--received';
+    if (disputeWinner === 'Maria') {
+      statusText = 'Sem Pagamento (Reembolsado)';
+      statusBadgeClass = 'freelancer-panel__status--disputed';
+    } else {
+      statusText = 'Pagamento Recebido';
+      statusBadgeClass = 'freelancer-panel__status--received';
+    }
   }
 
   return (

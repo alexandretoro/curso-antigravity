@@ -6,6 +6,7 @@ export function ClientPanel({
   balance = 2500,
   vaultedAmount = null,
   paymentSentBadge = false,
+  refundBadge = false,
   currentStep = 1,
   onDeposit,
   onApprove,
@@ -29,7 +30,12 @@ export function ClientPanel({
       <div className="client-panel__balance-box">
         <div className="client-panel__balance-header">
           <span className="font-label-caps client-panel__balance-label">Balance</span>
-          {paymentSentBadge ? (
+          {refundBadge ? (
+            <span className="font-label-caps client-panel__vaulted-badge client-panel__vaulted-badge--refunded">
+              <span className="material-symbols-outlined client-panel__lock-icon">undo</span>
+              Refund Received
+            </span>
+          ) : paymentSentBadge ? (
             <span className="font-label-caps client-panel__vaulted-badge">
               <span className="material-symbols-outlined client-panel__lock-icon">check_circle</span>
               Payment Sent

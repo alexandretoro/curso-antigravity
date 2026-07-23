@@ -60,6 +60,10 @@
   font-size: 11px;
 }
 
+.client-panel__vaulted-badge--refunded {
+  color: var(--color-secondary-container);
+}
+
 .client-panel__lock-icon {
   font-size: 14px;
 }
